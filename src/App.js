@@ -1,15 +1,23 @@
-
 import './App.css';
 import BarChart from './components/BarChart';
+import Header from './components/Header';
+import Footer from './components/Footer';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App(){
 
   return(
-    <div>
     <div className='container'>
-        <BarChart/>
-    </div>
-    <h1>dvjskjfhkjs</h1>
+      <div className='header'>
+          <Header/>
+      </div>
+      <div className='barChart'>
+          <BarChart />
+      </div>
+      <footer className='page-footer'>
+          <Footer/>
+      </footer>
   </div>
   )
 }
