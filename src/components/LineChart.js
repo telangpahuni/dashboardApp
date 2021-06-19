@@ -1,9 +1,9 @@
-import { registerables } from "chart.js";
-import { useEffect, useState } from "react";
-import { Bar } from "react-chartjs-2";
-import { getData, getDataDough } from "./GetData";
 
-const BarChart = () => {
+import { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import { getData } from "./GetData";
+
+const LineChart = () => {
   const [dataS, setDataS] = useState(null);
   useEffect(() => {
     getData().then((val) => {
@@ -35,12 +35,11 @@ const BarChart = () => {
   }, []);
 
   return (
-    <Bar
+    <Line
       width='900'
       height='250'
       data={dataS}
       options={{
-        indexAxis: 'y',
         grouped: true,
         maintainAspectRatio: true,
         responsive: true,
@@ -50,20 +49,13 @@ const BarChart = () => {
         },
         scales: {
           x: {
-              grid: {
-                display:false,
-                // drawTicks: false
-              },
+
               ticks: {
                 color: ['rgba(23,37,42,1)'],
                 
               }
           },
           y: {
-              grid: {
-                display:false,
-                
-              }   ,
               ticks:{
                 padding : 0,
                 backdropPadding: 0,
@@ -81,4 +73,4 @@ const BarChart = () => {
     />
   );
 };
-export default BarChart;
+export default LineChart;

@@ -2,7 +2,8 @@ import './App.css';
 import BarChart from './components/BarChart';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import LineChart from './components/LineChart';
+import StatusTable from './components/StatusTable';
 
 
 function App(){
@@ -13,8 +14,10 @@ function App(){
           <Header/>
       </div>
       <div className='barChart'>
-          <BarChart />
+          {/* <BarChart /> */}
+          {/* <LineChart /> */}
       </div>
+          <StatusTable/>
       <footer className='page-footer'>
           <Footer/>
       </footer>

@@ -1,12 +1,7 @@
 .App {
   text-align: center;
-  display:flex;
-  
-  
+  display:flex; 
 }
-
-
-
 .container{
   height: fit-content;
   width: auto;
@@ -18,7 +13,6 @@
 
 }
 .page-footer{
-  color:pink;
   position: absolute;
   bottom:0px;
 }

@@ -32,8 +32,3 @@ export async function getData() {
     dataS.push(statCount);
     return dataS
 }
-
-
-export function getDataDough(){
-    return 'ho gya ji';
-} 
