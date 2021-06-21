@@ -1,64 +1,68 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as Table from "react-bootstrap";
-import tableData from "./tableData.csv";
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
-import { useEffect } from "react";
-// import { useTable } from "react-bootstrap/Table";
+import {dataTable}  from "./DataTable";
 
 const StatusTable = () => {
-  const [len, setLen] = useState();
-  const [data, setData] = useState();
-  const [heading, setHead] = useState();
-  const [tableLen, setTable] = useState();
-  const ab = [];
-  async function statusD() {
-    const t = await fetch(tableData);
-    const d = await t.text();
-    const tD = d.split("\n");
-    var count =0;
-    for (var i = 0; i < tD.length; i++) {
-      const tData = tD[i].split(",");
-      count += 1;
-      ab.push(tData);
-    }
-    const index = ab[0].length;
-    setTable(count-2);
-    return [ab, index];
-  }
-
-  useEffect(() => {
-    statusD().then((val) => {
-        setHead(val[0][0]);
-        setLen(val[1]);
-        const val1 = val[0].shift();
-        setData(val[0]);
-    });
+    const [len,setLen]=useState(0);
+    const [heading,setHeading]=useState([]);
+    const [tableLen,settableLen]=useState(0);
+    const [data,setData]=useState(Array<[]>[]);
+    
+        useEffect(() => {
+        let isSubscribed=true;
+        dataTable().then((val)=>{
+            console.log(val);
+            if(isSubscribed){
+               setLen(val.len);
+               setHeading(val.heading);
+               settableLen(val.tablelen);
+               setData(val.dataR);
+            }
+        })
+        
+        return () =>isSubscribed=false
+    }, [])
+    if(data){
+   
     return (
-        data
-    )
-  }, []);
-  return (
-      <div>
-        <Table.Table responsive>
-          <thead>
-            <tr>
-              {Array.from({ length: len }).map((_, index) => (
-                <th key={index}>{heading[index]}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-          {Array.from({ length: tableLen+1  }).map((_, index) => (
-                <tr key={index}>{
-                    Array.from({ length: len  }).map((_, index1) => (
+        <div>
+            <Table.Table className='responsive'>
+                <thead>
+                <tr>
+                    {Array.from({ length: len }).map((_, index) => (
+                    <th key={index}>{heading[index]}</th>
+                    ))}
+                </tr>
+                </thead>
+                <tbody>
+            
+                {Array.from({ length: tableLen }).map((_, index) => (
+                    <tr key={index}>
+                    {Array.from({ length: len }).map((_, index1) => (
                         <td key={index1}>{data[index][index1]}</td>
-                    )  
-                )}</tr>
-              ))}
-          </tbody>
-        </Table.Table>
-      </div>
-    )
+                    ))}
+                    </tr>
+                ))} 
+                </tbody> 
+            </Table.Table>
+        </div>
+    );
+    }
+    else{
+        return (
+            <h1>Still loading</h1>
+        )
+    }
 };
+
 export default StatusTable;
+
+
+
+
+
+
+
+

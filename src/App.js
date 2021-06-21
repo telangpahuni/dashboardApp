@@ -15,7 +15,7 @@ function App(){
       </div>
       <div className='barChart'>
           {/* <BarChart /> */}
-          {/* <LineChart /> */}
+          <LineChart />
       </div>
           <StatusTable/>
       <footer className='page-footer'>
