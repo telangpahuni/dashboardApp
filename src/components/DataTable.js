@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import tableD from "./tableData.csv";
 
 export async function dataTable() {
@@ -25,6 +24,5 @@ export async function dataTable() {
     "dataR":ab
   }
  ;
-//   console.log("djs"+sData);
   return sData;
 }
