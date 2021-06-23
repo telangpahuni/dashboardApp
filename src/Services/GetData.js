@@ -1,4 +1,4 @@
-import setUrl from './test.csv';
+import setUrl from '../assets/test.csv';
 export async function getData() {
     const row = []
     const statCount = []

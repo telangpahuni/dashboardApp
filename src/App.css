@@ -1,18 +1,25 @@
-.App {
-  text-align: center;
-  display:flex; 
-}
 .container{
-  height: fit-content;
-  width: auto;
+  padding-left: 5%;
+  width: 50%;
 }
 .container-fluid{
-  height: 100%;
-  font-family: fantasy;
+  /* height: 100%; */
+  /* font-family: fantasy; */
   color:rgb(23,37,42);
-
+  
 }
 .page-footer{
   position: absolute;
-  bottom:0px;
+
+}
+.chart{
+  display:flex;
+}
+.barchart{
+  align-items:flex-start ;
+
+}
+.linechart{
+  align-items:flex-start ;
+  /* justify-content: center; */
 }

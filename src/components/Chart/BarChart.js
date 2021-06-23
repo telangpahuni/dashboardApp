@@ -1,7 +1,7 @@
 import { registerables } from "chart.js";
 import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
-import { getData, getDataDough } from "./GetData";
+import { getData, getDataDough } from "../../Services/GetData";
 
 const BarChart = () => {
   const [dataS, setDataS] = useState(null);
@@ -36,8 +36,8 @@ const BarChart = () => {
 
   return (
     <Bar
-      width='900'
-      height='250'
+      width='150'
+       height='25'
       data={dataS}
       options={{
         indexAxis: 'y',
@@ -68,8 +68,8 @@ const BarChart = () => {
                 padding : 0,
                 backdropPadding: 0,
                 font:{
-                  family: 'fantasy',
-                  size: 14,
+                  // family: 'fantasy',
+                  size: 12,
 
                 },
 

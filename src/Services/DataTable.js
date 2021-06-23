@@ -1,4 +1,4 @@
-import tableD from "./tableData.csv";
+import tableD from "../assets/tableData.csv";
 
 export async function dataTable() {
   const ab = [];

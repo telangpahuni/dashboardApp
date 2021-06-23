@@ -1,0 +1,14 @@
+.doughnut-body{
+    position: relative;
+    width: 81%;
+    transform: translateX(12%);
+}
+@media (max-width: 995px) {
+    .doughnut-body{
+        width: 43%;
+        transform: translateX(70%);
+  }
+}
+/* height: 22vh;
+width: 41vw;
+transform: translateX(56%); */

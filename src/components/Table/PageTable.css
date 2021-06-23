@@ -1,0 +1,20 @@
+.your-custom-styles {
+    font-size: 15px;
+    box-shadow: 4px 4px 12px 0px black;
+    padding: 2em;
+    margin-bottom:45px;
+    overflow: auto;
+  }
+
+  .your-custom-styles div:nth-child(1)::before{
+      content: unset;
+  }
+  .your-custom-styles div:nth-child(1)::after{
+      content: unset;
+  }
+
+.mdb-datatable-filter input{
+    font-size: 15px;
+}
+
+
