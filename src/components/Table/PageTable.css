@@ -1,8 +1,8 @@
 .your-custom-styles {
     font-size: 15px;
-    box-shadow: 4px 4px 12px 0px black;
+    /* box-shadow: 4px 4px 8px 0px grey; */
     padding: 2em;
-    margin-bottom:45px;
+    /* margin-bottom:45px;  */
     overflow: auto;
   }
 
@@ -18,3 +18,14 @@
 }
 
 
+@media (max-width: 750px){
+    .your-custom-styles{
+        font-size: x-small !important;
+    }
+    
+}
+.page-table-body{
+    box-shadow: 2px 4px 11px 0px grey;
+    border-radius: 2%;
+    padding: 5%;
+}

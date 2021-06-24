@@ -4,12 +4,14 @@ function Chart() {
   return (
     <div className="container-fluid">
       <div className="row m-5">
-        <div className="col-lg-8 col-12">
-            <LineChart></LineChart>
-        </div>
-        <div className="col-lg-4 col-12 m-auto pb-5">
-            <div>
+        <div className="col-lg-7 col-md-7 col-12 ">
 
+
+            <LineChart></LineChart>
+
+        </div>
+        <div className="col-lg-5 col-md-5 col-12">
+            <div>
             <DoughChart></DoughChart>
             </div>
         </div>

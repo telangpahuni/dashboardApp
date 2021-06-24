@@ -1,14 +1,16 @@
-
+import './header.css';
+import logo from './splunklogo.jpg'
 function Header() {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-12">
-          <h1>Welcome to Splunk Dashboard</h1>
-        </div>
-      </div>
-    </div>
-  );
+        <nav className="header-navbar navbar fixed-top navbar-dark bg-primary">
+          <a className="title-navbar navbar-brand" href="#">
+            <img src={logo}
+             width="30" height="30" className="d-inline-block align-top" alt=""/>
+              Welcome to Splunk Dashboard
+          </a>
+        </nav>
+
+  )
 }
 
-export default Header;
+export default Header

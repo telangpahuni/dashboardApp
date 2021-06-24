@@ -1,0 +1,23 @@
+.header{
+    
+    background-color:rgb(54, 162, 235),
+}
+
+.header-navbar::before{
+    content: unset;
+}
+.title-navbar{
+    font-size: x-large !important;
+    font-family: inherit !important;
+}
+
+@media (min-width: 576px){
+
+    .modal-dialog {
+        max-width: 837px !important;
+        /* margin: 1.75rem auto; */
+        font-size:l
+
+    }
+
+}

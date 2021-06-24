@@ -20,7 +20,7 @@ const DoughChart = () => {
   const options = {
     maintainAspectRatio: true,
     responsive: true,
-    aspectRatio:1,
+    aspectRatio:2,
     plugins:{
         legend: {
             // display:true,
@@ -30,12 +30,58 @@ const DoughChart = () => {
     // radius:100
   };
   return (
-    <div className="card">
-      <div className="doughnut-body card-body">
+    <div>
+      <div className="doughnutchart">
         <Doughnut
           data={data}
           options={options}
         />
+      <a
+            data-toggle="modal"
+            data-target="#doughnutModal"
+          >
+            Show..
+          </a>
+          </div>
+     <div
+        className="modal fade"
+        id="doughnutModal"
+        tab-index="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                 Splunk status
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+            <Doughnut
+          data={data}
+          options={options}
+        />
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

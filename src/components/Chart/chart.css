@@ -1,4 +1,4 @@
-.doughnut-body{
+/* .doughnut-body{
     position: relative;
     width: 81%;
     transform: translateX(12%);
@@ -8,7 +8,15 @@
         width: 43%;
         transform: translateX(70%);
   }
+} */
+
+.linechart{
+    box-shadow: 2px 4px 11px 0px grey;
+    padding: 2%;
+    border-radius: 2%;
 }
-/* height: 22vh;
-width: 41vw;
-transform: translateX(56%); */
+.doughnutchart{
+    box-shadow: 2px 4px 11px 0px grey;
+    border-radius: 2%;
+    padding: 5%;
+}
