@@ -1,7 +1,7 @@
 import { registerables } from "chart.js";
 import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
-import { getData, getDataDough } from "../../Services/GetData";
+import { getData} from "../../Services/GetData";
 
 const BarChart = () => {
   const [dataS, setDataS] = useState(null);

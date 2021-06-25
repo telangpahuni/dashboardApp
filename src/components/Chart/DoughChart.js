@@ -1,21 +1,32 @@
-import './chart.css'
+import './chart.css';
+import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
+import {getDataDough} from "../../Services/GetData";
+
 
 const DoughChart = () => {
+  const [dataD,setData] = useState(null);
+    useEffect(() => {
+      getDataDough().then((val)=>{
+        const data = val;
+        setData(data);
+        console.log(val);
+      })
+    }, [])
+  
   const data = {
     datasets: [
       {
-        data: [10, 20, 30],
+        data: dataD,
         backgroundColor: [
           "rgb(255, 99, 132)",
           "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
         ],
         // circumference: 10,
       },
     ],
     // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: ["Red", "Yellow", "Blue"],
+    labels: ["Compliant", "Non-Compliant"],
   };
   const options = {
     maintainAspectRatio: true,

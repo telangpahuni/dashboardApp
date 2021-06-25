@@ -1,27 +1,13 @@
-/* .container{
-    margin: 0px;
+.page-body{
+  background-color: rgba(110, 109, 121, 0.1);
 }
-.page-footer{
-  position: absolute;
-
-}
-.chart{
-  display:flex;
-}
-.barchart{
-  align-items:flex-start ;
-
-}
-.linechart{
-  align-items:flex-start ;
-  /* justify-content: center; 
+/* .chart-body{
+  background-color: white !important;
 } */
-
-
-
 .side-panel{
   /* background-color: #e05915; */
-  border-right: 1px solid black;
+  border-right: 1px thin lightgrey ;
+  background-color: rgba(51, 51, 51, 0.8) ;
   
 }
 
@@ -33,12 +19,12 @@
 .side-panel div ul{
   list-style: none;
   padding:0;
+  color:white !important;
 }
 
 .side-panel div ul li{
-  padding: 25px 20px;
-  border-bottom: 1px solid;
-  font-size: 15px;
-  font-weight: 600;
-  color: purple;
+  /* padding:px ; */
+  /* border-bottom: 1px thin; */
+  font-size: 18px;
+  /* font-weight: 500; */
 }

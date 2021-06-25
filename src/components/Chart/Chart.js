@@ -3,7 +3,7 @@ import DoughChart from "./DoughChart";
 function Chart() {
   return (
     <div className="container-fluid">
-      <div className="row m-5">
+      <div className="chart-body row m-5">
         <div className="col-lg-7 col-md-7 col-12 ">
 
 

@@ -1,13 +1,16 @@
 import setUrl from '../assets/test.csv';
+import minv from '../assets/masterInventory.csv';
+var  ncount = 0;
 export async function getData() {
+    const dataS = [];
     const row = []
     const statCount = []
     const statusA = []
     const uniqueStatus = []
-    const dataS = [];
     const resp = await fetch(setUrl);
     const rev = await resp.text();
     const col = rev.split('\n');
+    ncount = col.length;
     for (var i = 0; i < col.length; i++) {
         row.push(col[i]);
     }
@@ -31,4 +34,13 @@ export async function getData() {
     dataS.push(uniqueStatus);
     dataS.push(statCount);
     return dataS
+}
+
+export async function getDataDough(){
+    const resp = await fetch(minv);
+    const rev = await resp.text();
+    const col = rev.split('\n');
+    const count = col.length;
+    return [count,ncount]
+    
 }
