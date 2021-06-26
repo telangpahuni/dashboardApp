@@ -5,10 +5,7 @@ function Chart() {
     <div className="container-fluid">
       <div className="chart-body row m-5">
         <div className="col-lg-7 col-md-7 col-12 ">
-
-
             <LineChart></LineChart>
-
         </div>
         <div className="col-lg-5 col-md-5 col-12">
             <div>

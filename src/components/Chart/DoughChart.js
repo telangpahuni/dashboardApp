@@ -1,27 +1,23 @@
-import './chart.css';
+import "./chart.css";
 import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
-import {getDataDough} from "../../Services/GetData";
-
+import { getDataDough } from "../../Services/GetData";
 
 const DoughChart = () => {
-  const [dataD,setData] = useState(null);
-    useEffect(() => {
-      getDataDough().then((val)=>{
-        const data = val;
-        setData(data);
-        console.log(val);
-      })
-    }, [])
-  
+  const [dataD, setData] = useState(null);
+  useEffect(() => {
+    getDataDough().then((val) => {
+      const data = val;
+      setData(data);
+      console.log(val);
+    });
+  }, []);
+
   const data = {
     datasets: [
       {
         data: dataD,
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-        ],
+        backgroundColor: ["rgb(172, 0, 255)", "rgb(9, 234, 225)"],
         // circumference: 10,
       },
     ],
@@ -31,30 +27,26 @@ const DoughChart = () => {
   const options = {
     maintainAspectRatio: true,
     responsive: true,
-    aspectRatio:2,
-    plugins:{
-        legend: {
-            // display:true,
-            position: "bottom",
-        },
-    }
+    aspectRatio: 2,
+    plugins: {
+      legend: {
+        // display:true,
+        position: "bottom",
+      },
+    },
     // radius:100
   };
   return (
-    <div>
+    <div className="pb-1">
       <div className="doughnutchart">
-        <Doughnut
-          data={data}
-          options={options}
-        />
-      <a
-            data-toggle="modal"
-            data-target="#doughnutModal"
-          >
-            Show..
-          </a>
-          </div>
-     <div
+        <div className=" d-none d-md-block d-xl-block d-lg-block pr-0 ">
+          <Doughnut data={data} options={options} />
+        </div>
+        <a data-toggle="modal" data-target="#doughnutModal">
+          Overall Compliance Status
+        </a>
+      </div>
+      <div
         className="modal fade"
         id="doughnutModal"
         tab-index="-1"
@@ -65,7 +57,7 @@ const DoughChart = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                 Splunk status
+                Overall Compliance Status
               </h5>
               <button
                 type="button"
@@ -77,10 +69,7 @@ const DoughChart = () => {
               </button>
             </div>
             <div className="modal-body">
-            <Doughnut
-          data={data}
-          options={options}
-        />
+              <Doughnut data={data} options={options} />
             </div>
             <div className="modal-footer">
               <button

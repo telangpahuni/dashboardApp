@@ -12,12 +12,20 @@
 }
 
 @media (min-width: 576px){
-
     .modal-dialog {
         max-width: 837px !important;
         /* margin: 1.75rem auto; */
         font-size:l
-
     }
+}
 
+@media (max-width: 1220px){
+    .title-navbar{
+        font-size: large !important;
+    }
+}
+@media (max-width: 550px){
+    .title-navbar{
+        font-size: small !important;
+    }
 }

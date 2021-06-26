@@ -34,10 +34,7 @@ const LineChart = () => {
     grouped: true,
     maintainAspectRatio: true,
     responsive: true,
-    legend: {
-      position: "bottom",
-      display: true,
-    },
+    alignToPixels: true,
     scales: {
       x: {
         ticks: {
@@ -46,25 +43,26 @@ const LineChart = () => {
       },
       y: {
         ticks: {
-          padding: 0,
-          backdropPadding: 0,
+          font:{
+            size:14,
+          }
         },
       },
     },
   };
   return (
-    <div>
-      <div className='linechart'>
+    <div className='pb-1'>
+      <div className="linechart">
+        <div className='d-none d-md-block d-xl-block d-lg-block'>
+
           <Line height="110" data={dataS} options={options} />
 
-          <a
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            Show..
-          </a>
-          </div>
-     <div
+        </div>
+        <a data-toggle="modal" data-target="#exampleModal">
+          Statuswise Count..
+        </a>
+      </div>
+      <div
         className="modal fade"
         id="exampleModal"
         tab-index="-1"
@@ -75,7 +73,7 @@ const LineChart = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Modal title
+                Count per Status
               </h5>
               <button
                 type="button"
@@ -87,7 +85,7 @@ const LineChart = () => {
               </button>
             </div>
             <div className="modal-body">
-            <Line data={dataS} options={options} />
+              <Line data={dataS} options={options} />
             </div>
             <div className="modal-footer">
               <button

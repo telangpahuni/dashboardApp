@@ -1,3 +1,15 @@
 /* .sidebar-sticky{
     background-color: rgba(192, 192, 192, 0.336) ;
 } */
+
+
+@media (max-width: 1220px){
+.sidebar-text{
+    font-size: medium !important;
+}
+}
+@media (max-width: 1120px){
+    .sidebar-text{
+        font-size: small !important;
+    }
+    }
