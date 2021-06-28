@@ -2,6 +2,7 @@ import "./chart.css";
 import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { getDataDough } from "../../Services/GetData";
+import ChartModal from '../../components/Modal/Modal'
 
 const DoughChart = () => {
   const [dataD, setData] = useState(null);
@@ -46,43 +47,7 @@ const DoughChart = () => {
           Overall Compliance Status
         </a>
       </div>
-      <div
-        className="modal fade"
-        id="doughnutModal"
-        tab-index="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Overall Compliance Status
-              </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              <Doughnut data={data} options={options} />
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <ChartModal id="doughnutModal" chart={<Doughnut data={data} options={options} />}></ChartModal>
     </div>
   );
 };
