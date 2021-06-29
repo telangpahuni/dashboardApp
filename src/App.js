@@ -1,24 +1,32 @@
 import "./App.css";
-import Chart from "./components/Chart/Chart";
+
 import Header from "./components/Header/Header";
-import PageTable from "./components/Table/PageTable";
 import SidePanel from "./components/SidePanel/SidePanel";
-// import "bootstrap-css-only/css/bootstrap.min.css";
-// import "mdbreact/dist/css/mdb.css";
+import Aboutus from "./components/Aboutus/Aboutus";
+import Home from "./components/Home/Home";
+import {BrowserRouter as Router,
+  Switch,
+  Route,
+  Link} from 'react-router-dom';
 
 function App() {
   return (
     <>
+      <Router>
       <Header />
-      <div className="page-body row mt-5">
+      <div className="row mt-5">
         <div className="side-panel col-lg-2 d-none d-xl-block d-lg-block pr-0 ">
           <SidePanel />
         </div>
-        <div className="col-lg-10">
-          <Chart />
-          <PageTable />
+        <div className="page-body col-lg-10">
+          <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route exact path='/aboutus' component={Aboutus}></Route>
+        </Switch>
         </div>
-      </div>
+        </div>
+
+      </Router>
     </>
   );
 }

@@ -1,25 +1,33 @@
 import './sidepanel.css'
-const SidePanel=()=>{
 
+import Aboutus from '../Aboutus/Aboutus';
+import {
+  BrowserRouter as Router,
+  // Switch,
+  // Route,
+ Link} from 'react-router-dom';
+const SidePanel=()=>{
     return(
-        <div className="sidebar mt-4">
+        <div className="sidebar mt-2">
             <ul className="nav flex-column ">
               <li className="nav-item nav-link panel-item">
-                <a className="sidebar-text active text-light " href="">
+                {/* <a className="sidebar-text active text-light " href="/"> */}
+                <Link to='/'>
                   Dashboard <span className="sr-only">(current)</span>
-                </a>
+                  </Link>
+                {/* </a> */}
               </li>
               <li className="nav-item nav-link panel-item">
-                <a className="sidebar-text text-light" href="">
+
                   Troubleshooting Steps
-                </a>
               </li>
               <li className="nav-item nav-link panel-item">
-                <a className="sidebar-text text-light"  href="">
+
+                <Link to='/aboutus'>
                   About us
-                </a>
+                </Link>
+
               </li>
-              
             </ul>
           </div>
     )

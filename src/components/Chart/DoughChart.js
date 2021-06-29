@@ -2,7 +2,9 @@ import "./chart.css";
 import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { getDataDough } from "../../Services/GetData";
-import ChartModal from '../../components/Modal/Modal'
+import ChartModal from '../../components/Modal/Modal';
+
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const DoughChart = () => {
   const [dataD, setData] = useState(null);
@@ -37,6 +39,7 @@ const DoughChart = () => {
     },
     // radius:100
   };
+  if(dataD){
   return (
     <div className="pb-1">
       <div className="doughnutchart">
@@ -49,6 +52,20 @@ const DoughChart = () => {
       </div>
     <ChartModal id="doughnutModal" chart={<Doughnut data={data} options={options} />}></ChartModal>
     </div>
-  );
+  )
+  }
+  else{
+    return(
+      <div className="pb-1">
+      <div className="doughnutchart">
+      <div className=" d-none d-md-block d-xl-block d-lg-block pr-0 ">
+      <LoadingSpinner></LoadingSpinner>
+        </div>
+      
+      </div>
+      </div>
+    )
+  }
 };
+
 export default DoughChart;

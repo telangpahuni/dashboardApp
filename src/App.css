@@ -1,10 +1,12 @@
 .page-body{
   background-color: rgba(110, 109, 121, 0.1);
+  /* padding-top: 4rem; */
+  min-height: 100vh;
 }
 /* .chart-body{
   background-color: white !important;
 } */
-.side-panel{
+.sidebar{
   /* background-color: #e05915; */
   border-right: 1px thin lightgrey ;
   background-color: rgba(51, 51, 51, 0.8) ;
