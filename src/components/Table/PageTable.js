@@ -1,5 +1,6 @@
 import "./PageTable.css";
 import { dataTable } from "../../Services/DataTable";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 import React from "react";
 import { MDBDataTableV5 } from "mdbreact";
@@ -91,8 +92,17 @@ function PageTable() {
         </div>
       </div>
     );
-  } else {
-    return <h1>still loading</h1>;
+  } 
+  else {
+    return(
+      <div className="container-fluid">
+      <div className=" row">
+        <div className="page-table-body col-lg-10 col-md-10 col-10 m-auto py-0">
+        <LoadingSpinner/>
+        </div>
+        </div>
+        </div>
+    )
   }
 }
 

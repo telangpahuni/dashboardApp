@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import ChartModal from '../../components/Modal/Modal'
 import { getData } from "../../Services/GetData";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const LineChart = () => {
   const [dataS, setDataS] = useState(null);
@@ -51,6 +52,7 @@ const LineChart = () => {
       },
     },
   };
+  if(dataS){
   return (
     <div className='pb-1'>
       <div className="linechart">
@@ -65,6 +67,17 @@ const LineChart = () => {
       </div>
       <ChartModal id="exampleModal" chart={<Line data={dataS} options={options} />}></ChartModal>
     </div>
-  );
+  )}
+  else{
+    return (
+      <div className='pb-1'>
+        <div className="linechart">
+          <div className='d-none d-md-block d-xl-block d-lg-block'>
+            <LoadingSpinner></LoadingSpinner>
+            </div>
+            </div>
+            </div>
+    )
+  }
 };
 export default LineChart;
