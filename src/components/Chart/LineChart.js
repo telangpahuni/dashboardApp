@@ -55,7 +55,7 @@ const LineChart = () => {
   if(dataS){
   return (
     <div className='pb-1'>
-      <div className="linechart">
+      <div className="linechart text-right">
         <div className='d-none d-md-block d-xl-block d-lg-block'>
 
           <Line height="110" data={dataS} options={options} />

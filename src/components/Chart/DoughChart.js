@@ -1,12 +1,13 @@
 import "./chart.css";
 import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { getDataDough } from "../../Services/GetData";
+import { getDataDough,getData } from "../../Services/GetData";
 import ChartModal from '../../components/Modal/Modal';
 
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const DoughChart = () => {
+  getData();
   const [dataD, setData] = useState(null);
   useEffect(() => {
     getDataDough().then((val) => {
@@ -41,8 +42,8 @@ const DoughChart = () => {
   };
   if(dataD){
   return (
-    <div className="pb-1">
-      <div className="doughnutchart">
+    <div className="">
+      <div className="doughnutchart text-right">
         <div className=" d-none d-md-block d-xl-block d-lg-block pr-0 ">
           <Doughnut data={data} options={options} />
         </div>
@@ -56,7 +57,7 @@ const DoughChart = () => {
   }
   else{
     return(
-      <div className="pb-1">
+      <div className="">
       <div className="doughnutchart">
       <div className=" d-none d-md-block d-xl-block d-lg-block pr-0 ">
       <LoadingSpinner></LoadingSpinner>

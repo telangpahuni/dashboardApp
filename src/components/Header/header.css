@@ -1,7 +1,4 @@
-.header{
-    
-    background-color:rgb(54, 162, 235),
-}
+
 
 .header-navbar::before{
     content: unset;
@@ -9,6 +6,10 @@
 .title-navbar{
     font-size: x-large !important;
     font-family: inherit !important;
+    color: white !important;
+}
+.header-heading{
+    color: white !important;
 }
 
 @media (min-width: 576px){

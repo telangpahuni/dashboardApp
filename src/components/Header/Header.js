@@ -1,8 +1,9 @@
 import "./header.css";
+import {Link} from 'react-router-dom';
 import logo from "./splunklogo.jpg";
 function Header() {
   return (
-    <nav className="header-navbar navbar fixed-top navbar-dark bg-dark">
+    <nav className="header-navbar navbar fixed-top navbar-dark bg-dark text-light">
       <a className="title-navbar navbar-brand" href="#">
         <img
           src={logo}
@@ -11,7 +12,11 @@ function Header() {
           className="d-inline-block align-top"
           alt=""
         />
-        Welcome to Splunk Dashboard
+        {/* <div className='header-heading'> */}
+        <Link to='/' className='header-heading '>
+          &nbsp; Welcome to Splunk Dashboard
+        </Link>
+        {/* </div> */}
       </a>
       <button
         className="navbar-toggler d-block d-xl-none d-lg-none d-md-block"
@@ -28,7 +33,9 @@ function Header() {
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">
+            <Link to='/' className='header-heading '>
               Dashboard <span class="sr-only">(current)</span>
+            </Link>
             </a>
           </li>
           <li class="nav-item">
@@ -38,7 +45,16 @@ function Header() {
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
+            <Link to='/aboutus' className='header-heading '>
               About us
+              </Link>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+            <Link to='/table' className='header-heading '>
+              Table
+              </Link>
             </a>
           </li>
         </ul>

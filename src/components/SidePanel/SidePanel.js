@@ -8,23 +8,29 @@ import {
  Link} from 'react-router-dom';
 const SidePanel=()=>{
     return(
-        <div className="sidebar mt-2">
-            <ul className="nav flex-column ">
-              <li className="nav-item nav-link panel-item">
-                {/* <a className="sidebar-text active text-light " href="/"> */}
-                <Link to='/'>
+        <div className="sidebar">
+            <ul className="sidebar-item nav flex-column">
+              <li className="nav-item nav-link panel-item mt-2">
+
+                <Link to='/' className='panel-item sidebar-text'>
                   Dashboard <span className="sr-only">(current)</span>
                   </Link>
-                {/* </a> */}
               </li>
-              <li className="nav-item nav-link panel-item">
+              <li className="nav-item nav-link panel-item sidebar-text">
 
                   Troubleshooting Steps
               </li>
               <li className="nav-item nav-link panel-item">
 
-                <Link to='/aboutus'>
+                <Link to='/aboutus' className='panel-item sidebar-text'>
                   About us
+                </Link>
+
+              </li>
+              <li className="nav-item nav-link panel-item">
+
+                <Link to='/table' className='panel-item sidebar-text'>
+                  Detailed Table
                 </Link>
 
               </li>

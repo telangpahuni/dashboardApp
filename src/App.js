@@ -8,6 +8,7 @@ import {BrowserRouter as Router,
   Switch,
   Route,
   Link} from 'react-router-dom';
+import Table from "./components/Table/Table";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Switch>
           <Route exact path='/' component={Home}></Route>
           <Route exact path='/aboutus' component={Aboutus}></Route>
+          <Route exact path='/table' component={Table}></Route>
+          
         </Switch>
         </div>
         </div>

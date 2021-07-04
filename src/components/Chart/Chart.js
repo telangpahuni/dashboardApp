@@ -1,9 +1,15 @@
 import LineChart from "./LineChart";
+import DisplayCount from '../DisplayCount/DisplayCount';
 import DoughChart from "./DoughChart";
 function Chart() {
   return (
     <div className="container-fluid">
-      <div className="chart-body row m-5">
+      <div className="row m-5">
+      <div className="col-lg-12 col-md-12 col-12">
+          <DisplayCount/> 
+      </div>
+      <div className="col-lg-12 col-md-12 col-12">
+      <div className="row">
         <div className="col-lg-7 col-md-7 col-12 ">
             <LineChart></LineChart>
         </div>
@@ -12,6 +18,9 @@ function Chart() {
             <DoughChart></DoughChart>
             </div>
         </div>
+        </div>
+      </div>
+
       </div>
     </div>
   );
