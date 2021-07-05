@@ -8,7 +8,7 @@ import {
  Link} from 'react-router-dom';
 const SidePanel=()=>{
     return(
-        <div className="sidebar">
+        <div className="sidebar p-0 col-lg-2">
             <ul className="sidebar-item nav flex-column">
               <li className="nav-item nav-link panel-item mt-2">
 
@@ -34,6 +34,9 @@ const SidePanel=()=>{
                 </Link>
 
               </li>
+
+              
+
             </ul>
           </div>
     )

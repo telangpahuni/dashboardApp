@@ -16,41 +16,56 @@ const DoughChart = () => {
       console.log(val);
     });
   }, []);
-
+  
   const data = {
     datasets: [
       {
         data: dataD,
-        backgroundColor: ["rgb(172, 0, 255)", "rgb(9, 234, 225)"],
+        backgroundColor: ["#52D726", "#ffff33"],
         // circumference: 10,
+
       },
     ],
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: ["Compliant", "Non-Compliant"],
   };
   const options = {
+    cutout:'70%',
     maintainAspectRatio: true,
     responsive: true,
     aspectRatio: 2,
     plugins: {
       legend: {
         // display:true,
-        position: "bottom",
+        position: "right",
       },
     },
-    // radius:100
+    radius:'80%',
+    // innerRadius:95,
   };
   if(dataD){
-  return (
-    <div className="">
-      <div className="doughnutchart text-right">
-        <div className=" d-none d-md-block d-xl-block d-lg-block pr-0 ">
+    return (
+      <div className="">
+      <div className=" doughnutchart text-right">
+        <div className="  d-none d-md-block d-xl-block d-lg-block pr-0 pb-0">
           <Doughnut data={data} options={options} />
         </div>
+        <div className='modal-box'>
+        <div className='d-lg-block d-md-block d-none'>
         <a data-toggle="modal" data-target="#doughnutModal">
-          Overall Compliance Status
+        <i class="fas fa-expand"></i>
         </a>
+        </div>
+        <div className='d-lg-none d-md-none d-block text-center'>
+
+        <a data-toggle="modal" data-target="#doughnutModal">
+        Compliance Reach <i class="fas fa-expand"></i>
+        </a>
+        </div>
+        </div>
       </div>
+
+
     <ChartModal id="doughnutModal" chart={<Doughnut data={data} options={options} />}></ChartModal>
     </div>
   )

@@ -6,6 +6,7 @@ import React from "react";
 import { MDBDataTableV5 } from "mdbreact";
 import { useState, useEffect } from "react";
 
+
 function PageTable() {
   const [heading, setHeading] = useState([]);
   const [data, setData] = useState(Array < [] > []);
@@ -75,6 +76,7 @@ function PageTable() {
     };
     return (
       <div className="container-fluid">
+        
         <div className=" row">
           <div className="page-table-body col-lg-10 col-md-10 col-10 m-auto py-0">
                 <MDBDataTableV5

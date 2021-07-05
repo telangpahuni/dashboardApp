@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-    <footer class="bg-secondary  text-white text-center text-lg-start m-0 b-0">
+    <footer class="bg-secondary  text-white text-center text-lg-start m-0 b-0 " style={{'background-color':"transparent"}}>
       <div class="container p-4 ">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-12 mb-3 mb-md-0">
