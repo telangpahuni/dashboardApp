@@ -17,8 +17,9 @@ const SidePanel=()=>{
                   </Link>
               </li>
               <li className="nav-item nav-link panel-item sidebar-text">
-
+                <Link to='/troubleshootingsteps' className='panel-item sidebar-text'>
                   Troubleshooting Steps
+                </Link>
               </li>
               <li className="nav-item nav-link panel-item">
 

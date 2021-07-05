@@ -7,6 +7,8 @@ import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Table from "./components/Table/Table";
 import Footer from "./components/Footer/Footer";
+import { TroubleshootingSteps } from "./components/TroubleshootingSteps/TroubleshootingSteps";
+import { ExportToExcel } from './components/Table/ExportToExcel/ExportToExcel';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Route exact path="/" component={Home}></Route>
               <Route exact path="/aboutus" component={Aboutus}></Route>
               <Route exact path="/table" component={Table}></Route>
+              <Route exact path="/troubleshootingsteps" component={TroubleshootingSteps}></Route>
+              <Route exact path="/filedownload" component={ExportToExcel}></Route>
             </Switch>
             <div className="page-footer pt-3 sticky-bottom">
               <Footer />

@@ -19,10 +19,9 @@ const LineChart = () => {
               label: "Count of the status",
               data: z,
               backgroundColor: [
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
+                "#52D726"
               ],
-              borderColor: ["rgb(54, 162, 235)", "rgb(153, 102, 255)"],
+              borderColor: ["rgb(54, 162, 235)"],
               borderWidth: 1,
             },
           ],

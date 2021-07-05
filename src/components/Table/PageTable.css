@@ -29,3 +29,10 @@
     padding: 5%;
     background-color: white !important;
 }
+.file-export{
+    
+    padding-top: 2%;
+}
+.file-export-text{
+    color:black;
+}
