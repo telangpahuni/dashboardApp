@@ -1,5 +1,5 @@
 import { getCountData } from "../../Services/GetData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./DisplayCount.css";
 import {Link} from 'react-router-dom';
 
@@ -8,11 +8,13 @@ const DisplayCount = () => {
   const [total, settotal] = useState();
   const [noncompliant, setnc] = useState();
   const [percent, setperc] = useState();
-  getCountData().then((val) => {
-    settotal(val.total);
-    setnc(val.noncompliant);
-    setperc(val.percentage);
-  });
+  useEffect(() => {
+    getCountData().then((val) => {
+      settotal(val.total);
+      setnc(val.noncompliant);
+      setperc(val.percentage);
+    });
+  }, [])
   return (
     <div className="container-fluid">
       <div className="row text-center">
